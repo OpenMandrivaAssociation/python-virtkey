@@ -6,7 +6,7 @@ Version:        0.60.0
 Release:        %mkrel 1
 Summary:        Python extension for emulating keypresses and getting current keyboard layout
 
-Group:          Development/Languages
+Group:          Development/Python
 #missing copy of GPL, licensing info in source file
 License:        GPLv2+
 URL:            https://launchpad.net/virtkey
@@ -40,5 +40,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root,-)
 #no documentation included in upstream tarball
 %{python_sitearch}/*
-
 
