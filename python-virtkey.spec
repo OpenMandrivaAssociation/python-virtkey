@@ -37,3 +37,12 @@ rm -rf $RPM_BUILD_ROOT
 #no documentation included in upstream tarball
 %{python_sitearch}/*
 
+
+
+%changelog
+* Fri Jan 07 2011 Antoine Ginies <aginies@mandriva.com> 0.60.0-1mdv2011.0
++ Revision: 629471
+- fix buildrequires, remove unwanted stuff
+- fix group
+- import python-virtkey
+
