@@ -1,6 +1,6 @@
 Name:           python-virtkey
 Version:        0.60.0
-Release:        %mkrel 1
+Release:        2
 Summary:        Python extension for emulating keypresses and getting current keyboard layout
 
 Group:          Development/Python
@@ -8,9 +8,11 @@ License:        GPLv2+
 URL:            https://launchpad.net/virtkey
 Source0:        http://launchpad.net/virtkey/trunk/0.50/+download/%{name}-%{version}.tar.gz
 Patch0:         virtkey-gdk-pixbuf-headers.patch
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
-BuildRequires:  python-devel, libxtst-devel, gtk2-devel, glib2-devel
+BuildRequires:  python-devel
+BuildRequires:  libxtst-devel
+BuildRequires:  pkgconfig(gtk+-2.0)
+BuildRequires:  pkgconfig(glib-2.0)
 
 %description
 Python-virtkey is a python extension for emulating keypresses and getting
@@ -20,16 +22,11 @@ current keyboard layout.
 %setup -q 
 
 %build
-CFLAGS="$RPM_OPT_FLAGS" %{__python} setup.py build
+CFLAGS="%{optflags}" %{__python} setup.py build
 
 
 %install
-rm -rf $RPM_BUILD_ROOT
-%{__python} setup.py install --root $RPM_BUILD_ROOT
-
- 
-%clean
-rm -rf $RPM_BUILD_ROOT
+%{__python} setup.py install --root %{buildroot}
 
 
 %files
