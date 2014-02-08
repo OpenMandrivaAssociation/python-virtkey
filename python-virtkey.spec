@@ -1,6 +1,6 @@
 Name:           python-virtkey
 Version:        0.60.0
-Release:        2
+Release:        3
 Summary:        Python extension for emulating keypresses and getting current keyboard layout
 
 Group:          Development/Python
