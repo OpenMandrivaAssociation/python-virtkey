@@ -1,7 +1,7 @@
 Summary:	Python extension for emulating keypresses and getting current keyboard layout
 Name:		python-virtkey
 Version:	0.60.0
-Release:	8
+Release:	9
 Group:		Development/Python
 License:	GPLv2+
 Url:		https://launchpad.net/virtkey
