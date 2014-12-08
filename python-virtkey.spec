@@ -9,7 +9,7 @@ Source0:	http://launchpad.net/virtkey/trunk/0.50/+download/%{name}-%{version}.ta
 Patch0:		virtkey-gdk-pixbuf-headers.patch
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(gtk+-2.0)
-BuildRequires:	pkgconfig(python)
+BuildRequires:	pkgconfig(python2)
 BuildRequires:	pkgconfig(xtst)
 
 %description
@@ -20,13 +20,13 @@ current keyboard layout.
 %setup -q 
 
 %build
-CFLAGS="%{optflags}" %{__python} setup.py build
+CFLAGS="%{optflags}" %{__python2} setup.py build
 
 %install
-%{__python} setup.py install --root %{buildroot}
+%{__python2} setup.py install --root %{buildroot}
 
 
 %files
 #no documentation included in upstream tarball
-%{python_sitearch}/*
+%{python2_sitearch}/*
 
