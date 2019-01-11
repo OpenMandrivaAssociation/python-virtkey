@@ -1,11 +1,11 @@
 Summary:	Python extension for emulating keypresses and getting current keyboard layout
 Name:		python-virtkey
-Version:	0.60.0
-Release:	12
+Version:	0.63.0
+Release:	1
 Group:		Development/Python
 License:	GPLv2+
 Url:		https://launchpad.net/virtkey
-Source0:	http://launchpad.net/virtkey/trunk/0.50/+download/%{name}-%{version}.tar.gz
+Source0:	http://launchpad.net/virtkey/0.63/0.63.0/+download/virtkey-%{version}.tar.gz
 Patch0:		virtkey-gdk-pixbuf-headers.patch
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(gtk+-2.0)
@@ -20,13 +20,12 @@ current keyboard layout.
 %setup -q 
 
 %build
-CFLAGS="%{optflags}" %{__python2} setup.py build
+CFLAGS="%{optflags}" python2} setup.py build
 
 %install
-%{__python2} setup.py install --root %{buildroot}
+python setup.py install --root %{buildroot}
 
 
 %files
 #no documentation included in upstream tarball
-%{python2_sitearch}/*
-
+%{py_platsitedir}/*
